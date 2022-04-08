@@ -4,8 +4,8 @@
 #SBATCH --output=joblogs/test_%j.txt
 #SBATCH --nodes=1 
 #SBATCH --cpus-per-task=1 
-#SBATCH --mem=12GB 
-#SBATCH --time=00:10:00 
+#SBATCH --mem=30GB 
+#SBATCH --time=03:00:00 
 #SBATCH --gpus=v100:1
 #SBATCH --partition=gpu
 
