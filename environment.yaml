@@ -17,3 +17,5 @@ dependencies:
   - seaborn
   - spacy
   - matplotlib
+  - protobuf
+  - nltk
