@@ -104,7 +104,7 @@ def create_dataset_json(
         
         if l:
             print('Saving examples to data/' + file_prefix + name + '.json.gz')
-            with gzip.open('data/' + file_prefix + name + '.json.gz', 'wt') as f:
+            with gzip.open('data/' + file_prefix + name + '.json.gz', 'wt', encoding='utf-8') as f:
                 for ex in tqdm(l):
                     json.dump(ex, f, ensure_ascii=False)
                     f.write('\n')
