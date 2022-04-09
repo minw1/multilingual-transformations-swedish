@@ -6,3 +6,5 @@ models/*.txt
 models/*.pkl
 joblogs/
 outputs/
+
+__pycache__/
