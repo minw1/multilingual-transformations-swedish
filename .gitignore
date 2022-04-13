@@ -8,3 +8,5 @@ joblogs/
 outputs/
 
 __pycache__/
+
+*.ipynb
