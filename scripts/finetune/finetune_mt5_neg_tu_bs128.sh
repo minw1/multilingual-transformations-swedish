@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 #SBATCH --job-name=MT5-base-finetune-neg-tu
