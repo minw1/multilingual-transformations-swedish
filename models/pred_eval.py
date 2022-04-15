@@ -1,6 +1,8 @@
 import json
 import argparse
 
+from typing import *
+
 def evaluate_predictions(
 	pred_filename: str, 
 	gold_filename: str, 
