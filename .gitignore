@@ -8,7 +8,7 @@ joblogs/
 outputs/
 
 __pycache__/
-**/__pycache__/
+models/__pycache__/
 
 *.ipynb
 .ipynb_checkpoints/
