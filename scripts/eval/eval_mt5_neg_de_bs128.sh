@@ -1,11 +1,11 @@
 #!/bin/bash
 
 #SBATCH --job-name=MT5-base-eval-neg-de
-#SBATCH --output=joblogs/eval_neg_de_%j.txt
+#SBATCH --output=joblogs/%x_%j.txt
 #SBATCH --nodes=1 
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=16GB 
-#SBATCH --time=00:10:00
+#SBATCH --mem=30GB 
+#SBATCH --time=00:20:00
 #SBATCH --gpus=v100:1
 #SBATCH --partition=gpu
 

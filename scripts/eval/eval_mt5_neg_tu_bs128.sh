@@ -1,30 +1,29 @@
 #!/bin/bash
 
-#SBATCH --job-name=MT5-base-finetune-neg-tu
-#SBATCH --output=joblogs/test_neg_tu_%j.txt
+#SBATCH --job-name=MT5-base-eval-neg-tu
+#SBATCH --output=joblogs/%x_%j.txt
 #SBATCH --nodes=1 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=30GB 
-#SBATCH --time=07:00:00
+#SBATCH --time=00:20:00
 #SBATCH --gpus=v100:1
 #SBATCH --partition=gpu
 
+module load CUDA
+module load cuDNN
 module load miniconda
 
-source activate py38
-
-cd ~/project/multilingual_transformations
+source activate /gpfs/loomis/project/frank/ref4/conda_envs/py38
 
 python models/run_seq2seq.py \
     --model_name_or_path 'google/mt5-base' \
-    --do_train \
+    --do_eval \
+    --do_learning_curve \
     --task translation_src_to_tgt \
     --train_file data/neg_tu/neg_tu_train.json.gz \
     --validation_file data/neg_tu/neg_tu_dev.json.gz \
     --output_dir outputs/mt5-finetuning-neg-tu-bs128/  \
     --per_device_train_batch_size=8 \
-    --gradient_accumulation_steps=16 \
     --per_device_eval_batch_size=16 \
     --overwrite_output_dir \
     --predict_with_generate \
-    --num_train_epochs 10.0
